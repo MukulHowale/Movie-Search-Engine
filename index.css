@@ -1,0 +1,77 @@
+#search{
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid black; */
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+/* input to take movies */
+#in{
+    width: 600px;
+    height: 40px;
+    border: 1px solid rgb(226, 216, 16);
+    margin-left: 370px;
+    border-radius: 5px;
+    box-shadow: -2px 2px 8px 2px rgb(226, 216, 16, 50%);
+    font-size: 18px;
+}
+
+#in:focus{
+    border: none;
+}
+
+/* search button */
+#se{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    color: grey;
+    border: 1px solid rgb(226, 216, 16);
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#se:hover{
+    box-shadow:-2px 2px 8px 2px rgb(226, 216, 16, 50%);
+}
+
+/*movie details div*/
+#show{
+    width: 1000px;
+    height: 500px;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+/*movie details*/
+#showMovie{
+    /* border: 1px solid black; */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 800px;
+    height: 428px;
+    margin: auto;
+    margin-left: 200px;
+    display: flex;
+    gap:90px
+}
+
+#imgDiv{
+    width: 310px;
+    height: 428px;
+}
+
+#show  img{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#textDiv{
+    width: 450px;
+    height: 100%;
+}
+
