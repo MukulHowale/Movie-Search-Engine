@@ -1,3 +1,7 @@
+
+var b = document.body;
+b.style.backgroundImage = "url('https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/858387/4b8a92b93fc6b6a5a91175fdc7692d3c-700.jpg')";
+
 var show = document.createElement('div');
 show.setAttribute('id','show');
 document.body.append(show);
@@ -9,16 +13,37 @@ async function getMovies(){
     var movie = document.getElementById('in').value.split(" ").join("+");
 
     document.getElementById('in').value = "";
+    try{
+        let res = await fetch(`http://www.omdbapi.com/?apikey=4096a672&t=${movie}`);
 
-    let res = await fetch(`http://www.omdbapi.com/?apikey=4096a672&t=${movie}`);
-
-    let movies = await res.json();
+        let movies = await res.json();
+        
+        console.log(movies);
     
-    console.log(movies);
-
-    if(movie !== ""){
-        printData(movies);
+        if(movies.Response === "False"){
+            printError();
+        }
+        else if(movie !== ""){
+            printData(movies);
+        }
     }
+    catch(err){
+        console.log(err);
+    }
+}
+
+function printError(){
+    if(count == 1){
+        show.removeChild(show.firstChild);
+        count = 0;
+    }
+    var img = document.createElement('img');
+    img.style.width = "600px";
+    img.style.height = "500px";
+    img.style.marginLeft = "180px";
+    img.src = "https://www.myphukettravel.com/assets/front-end/images/404.gif";
+    show.append(img);
+    count++;
 }
 
 function printData(d){
@@ -46,21 +71,44 @@ function printData(d){
 
     var h1 = document.createElement('h1');
     h1.textContent = d.Title;
-    h1.style.color = "grey";
+    h1.style.color = "white";
+    h1.style.textShadow = "0 0 5px black";
 
     var year = document.createElement('h2');
     year.textContent = "Year : " + d.Released;
-    year.style.color = "grey";
+    year.style.color = "white";
+    year.style.textShadow = "0 0 5px black";
 
     var imdb = document.createElement('h2');
     imdb.textContent = "IMDB rating : " + d.imdbRating;
-    imdb.style.color = "grey";
+    imdb.style.color = "white";
+    imdb.style.textShadow = "0 0 5px black";
 
-    textDiv.append(h1, year, imdb);
+    var actors = document.createElement('h3');
+    actors.textContent = "Actors : " + d.Actors;
+    actors.style.color = "white";
+    actors.style.textShadow = "0 0 5px black";
+
+    var dir = document.createElement('h3');
+    dir.textContent = "Director : " + d.Director;
+    dir.style.color = "white";
+    dir.style.textShadow = "0 0 5px black";
+
+    var genre = document.createElement('h3');
+    genre.textContent = "Genre : " + d.Genre;
+    genre.style.color = "white";
+    genre.style.textShadow = "0 0 5px black";
+
+    var plot = document.createElement('h4');
+    plot.textContent = d.Plot;
+    plot.style.color = "white";
+    plot.style.textShadow = "0 0 7px black";
+
+
+    textDiv.append(h1, year, imdb, actors, dir, genre, plot);
 
     showMovie.append(imgDiv, textDiv);
     
     count++;
 }
 
-"https://www.wallpaperup.com/uploads/wallpapers/2015/12/12/858387/4b8a92b93fc6b6a5a91175fdc7692d3c-700.jpg"
