@@ -66,6 +66,13 @@ function printData(d){
 
     imgDiv.append(img);
 
+    if(Number(d.imdbRating) > 8.5){
+        var recom = document.createElement('div');
+        recom.setAttribute('id','recom');
+        recom.textContent = "Recommended";
+        imgDiv.append(recom);
+    }
+
     var textDiv = document.createElement('div');
     textDiv.setAttribute('id','textDiv');
 
