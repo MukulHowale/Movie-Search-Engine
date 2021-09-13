@@ -1,5 +1,5 @@
 body{
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 40px;
@@ -25,6 +25,8 @@ body{
     border-radius: 5px;
     box-shadow: -2px 2px 8px 2px rgb(226, 216, 16, 50%);
     font-size: 18px;
+    outline: none;
+    padding-left: 20px;
 }
 
 #in:focus{
@@ -44,13 +46,13 @@ body{
 
 #se:hover{
     box-shadow:-2px 2px 8px 2px rgb(226, 216, 16, 50%);
+    cursor: pointer;
 }
 
 /*movie details div*/
 #show{
     width: 1000px;
     height: 500px;
-    /* border: 1px solid black; */
     margin: auto;
 }
 
@@ -61,7 +63,7 @@ body{
     margin: auto;
     margin-left: 200px;
     display: flex;
-    gap:90px
+    gap:90px;
 }
 
 #imgDiv{
@@ -76,6 +78,8 @@ body{
 #textDiv{
     width: 450px;
     height: 100%;
+    color: white;
+    text-shadow: 0px 0px 5px yellow, 1px 2px black, -1px 0px black, 1px 0px black, 0px -1px black;
 }
 
 #recom{

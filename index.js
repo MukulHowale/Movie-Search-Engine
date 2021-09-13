@@ -78,39 +78,24 @@ function printData(d){
 
     var h1 = document.createElement('h1');
     h1.textContent = d.Title;
-    h1.style.color = "white";
-    h1.style.textShadow = "0 0 5px black";
 
     var year = document.createElement('h2');
     year.textContent = "Year : " + d.Released;
-    year.style.color = "white";
-    year.style.textShadow = "0 0 5px black";
 
     var imdb = document.createElement('h2');
-    imdb.textContent = "IMDB rating : " + d.imdbRating;
-    imdb.style.color = "white";
-    imdb.style.textShadow = "0 0 5px black";
+    imdb.textContent = "IMDB rating : " + d.imdbRating;  
 
     var actors = document.createElement('h3');
     actors.textContent = "Actors : " + d.Actors;
-    actors.style.color = "white";
-    actors.style.textShadow = "0 0 5px black";
 
     var dir = document.createElement('h3');
     dir.textContent = "Director : " + d.Director;
-    dir.style.color = "white";
-    dir.style.textShadow = "0 0 5px black";
 
     var genre = document.createElement('h3');
     genre.textContent = "Genre : " + d.Genre;
-    genre.style.color = "white";
-    genre.style.textShadow = "0 0 5px black";
 
     var plot = document.createElement('h4');
     plot.textContent = d.Plot;
-    plot.style.color = "white";
-    plot.style.textShadow = "0 0 7px black";
-
 
     textDiv.append(h1, year, imdb, actors, dir, genre, plot);
 
